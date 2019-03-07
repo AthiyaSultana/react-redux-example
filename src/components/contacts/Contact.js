@@ -10,6 +10,8 @@ class Contact extends Component {
 
   onDeleteClick = id => {
     //// DELETE CONTACT ////
+    console.log("id", id);
+    this.props.deleteContact(id);
   };
 
   render() {
@@ -58,7 +60,8 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-  contact: PropTypes.object.isRequired
+  contact: PropTypes.object.isRequired,
+  deleteContact: PropTypes.func.isRequired
 };
 
 export default connect(
